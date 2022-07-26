@@ -1,0 +1,19 @@
+---
+
+- name: Install Thruk Server
+  package:
+    name:
+      - thruk
+    state: latest
+
+
+- name: Create /etc/thruk/thruk_local.conf
+  template:
+    src: "templates/thruk_local.conf.j2"
+    dest: "/etc/thruk/thruk_local.conf"
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: restart thruk
+  service: name=thruk state=restarted

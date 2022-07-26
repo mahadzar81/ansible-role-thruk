@@ -1,0 +1,12 @@
+---
+- include: load-variables.yml
+
+- include: "setup-RedHat-family-prerequisites.yml"
+  when: ansible_os_family == 'RedHat'
+
+- include: setup-Debian-family-prerequisites.yml
+  when: ansible_os_family == 'Debian'
+  
+# tasks file for mod gearman worker
+- include: setup-thruk.yml
+

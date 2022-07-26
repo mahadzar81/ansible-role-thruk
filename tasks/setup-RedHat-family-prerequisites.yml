@@ -1,0 +1,35 @@
+---
+
+- name: Downloading the EPEL repository definitions.
+  get_url: url=http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm dest={{ download_dir }}/epel-release-6-8.noarch.rpm
+  when: ansible_distribution == "CentOS" and ansible_distribution_major_version == "6"
+
+- name: Downloading and enable the EPEL repository definitions.
+  yum: name={{ download_dir }}//epel-release-6-8.noarch.rpm state=present
+  when: ansible_distribution == "CentOS" and ansible_distribution_major_version == "6"
+
+- name: Downloading and enable the EPEL repository definitions.
+  yum: name=epel-release state=present
+  when: ansible_distribution == "CentOS" and ansible_distribution_major_version == "7"
+
+- name: Install  dependencies (RHEL/CentOS).
+  package:
+    name:
+      - gnupg2 
+    state: latest
+    
+- name: Downloading the repository file
+  yum_repository:
+    name: labsconsol
+    description: labs consol YUM repo
+    file: external_repos
+    baseurl: "https://labs.consol.de/repo/stable/rhel8/x86_64/labs-consol-stable.rhel{{ ansible_distribution_major_version }}.noarch.rpm"
+    gpgcheck: no
+ 
+- name: Wait for cloud-init
+  command: /usr/bin/cloud-init status --wait
+   
+- name: Wait 2 minutes for APT to complete on AWS instances
+  pause:
+    minutes: 2
+

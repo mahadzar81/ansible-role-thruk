@@ -1,0 +1,4 @@
+---
+# handlers file for mod gearman
+#- name: restart apache
+#  service: name={{ apache_service }} state=restarted
