@@ -14,6 +14,3 @@
     owner: root
     group: root
     mode: '0644'
-
-- name: restart thruk
-  service: name=thruk state=restarted
