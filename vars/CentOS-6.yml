@@ -1,2 +1,6 @@
 ---
 with_httpd_conf: /etc/httpd/conf.d
+apache_service: httpd
+apache_daemon: httpd
+apache_daemon_path: /usr/sbin/
+apache_server_root: /etc/httpd

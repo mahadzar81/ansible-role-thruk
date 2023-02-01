@@ -1,5 +1,9 @@
 ---
 
+- name: Update repositories cache
+  apt:
+    update_cache: yes
+
 - name: Install  dependencies (Debian).
   package:
     name:
@@ -17,9 +21,9 @@
     state: present
     update_cache: yes
  
-- name: Wait for cloud-init
-  command: /usr/bin/cloud-init status --wait
+# - name: Wait for cloud-init
+#   command: /usr/bin/cloud-init status --wait
    
-- name: Wait 2 minutes for APT to complete on AWS instances
-  pause:
-    minutes: 2
+# - name: Wait 2 minutes for APT to complete on AWS instances
+#   pause:
+#     minutes: 2
