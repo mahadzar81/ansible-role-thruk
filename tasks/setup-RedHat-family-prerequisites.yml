@@ -10,7 +10,12 @@
 
 - name: Downloading and enable the EPEL repository definitions.
   yum: name=epel-release state=present
-  when: ansible_distribution == "CentOS" and ansible_distribution_major_version == "7"
+  when: ansible_distribution == "CentOS" and (ansible_distribution_major_version == "7" or ansible_distribution_major_version == "8")
+
+- name: Downloading labs.console RPM-GPG-KEY
+  rpm_key:
+    state: present
+    key: https://labs.consol.de/repo/stable/RPM-GPG-KEY
 
 - name: Downloading the repository file
   yum:

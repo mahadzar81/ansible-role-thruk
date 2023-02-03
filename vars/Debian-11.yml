@@ -3,3 +3,4 @@ with_httpd_conf: /etc/apache2/sites-enabled
 apache_service: apache2
 apache_daemon: apache2
 apache_daemon_path: /usr/sbin/
+gnupg_package : gnupg2

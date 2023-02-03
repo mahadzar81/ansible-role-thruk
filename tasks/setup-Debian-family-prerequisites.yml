@@ -5,10 +5,11 @@
     update_cache: yes
 
 - name: Install  dependencies (Debian).
-  package:
+  apt:
     name:
-      - gnupg2 
+      - " {{ gnupg_package }}" 
     state: latest
+    force: yes
     
 - name: Add labs.consol Key
   apt_key:
