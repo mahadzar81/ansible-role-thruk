@@ -3,4 +3,4 @@ with_httpd_conf: /etc/apache2/conf-available
 apache_service: apache2
 apache_daemon: apache2
 apache_daemon_path: /usr/sbin/
-gnupg_package : gnupg2
+gnupg_package: gnupg2

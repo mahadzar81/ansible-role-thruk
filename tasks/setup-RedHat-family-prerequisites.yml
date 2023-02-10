@@ -28,8 +28,3 @@
       - httpd
       - naemon
     state: latest
-    
-
- 
-
-
