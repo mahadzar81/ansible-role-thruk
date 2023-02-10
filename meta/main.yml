@@ -5,7 +5,7 @@ galaxy_info:
   role_name: thruk
   namespace: "mahadzar81"
   author: Mahadzar
-  description: Thrusk server for RHEL/CentOS and Debian/Ubuntu.
+  description: Thruk server for RHEL/CentOS and Debian/Ubuntu.
   company: "NVDS"
   license: "license (BSD, MIT)"
   min_ansible_version: 2.4
