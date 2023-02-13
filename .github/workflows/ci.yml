@@ -43,14 +43,11 @@ jobs:
       matrix:
         distro:
           - centos7
-          - centos7
-          - ubuntu2012
-          - ubuntu2014
-          - ubuntu2016
-          - ubuntu2018
-          - ubuntu2020
+          - centos8
           - debian11
           - debian10
+          - ubuntu1804
+          - ubuntu2004
 
     steps:
       - name: Check out the codebase.
