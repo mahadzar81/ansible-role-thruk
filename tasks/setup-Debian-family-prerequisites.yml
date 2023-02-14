@@ -7,10 +7,9 @@
 - name: Install  dependencies (Debian).
   apt:
     name:
-      - " {{ gnupg_package }}" 
+      - "{{ gnupg_package }}"
     state: latest
     force: yes
-    
 - name: Add labs.consol Key
   apt_key:
     url: "https://labs.consol.de/repo/stable/RPM-GPG-KEY"
@@ -18,13 +17,6 @@
 
 - name: Add labs.consol Repository
   apt_repository:
-    repo: "deb http://labs.consol.de/repo/stable/debian {{ ansible_distribution_release }} main"
+    repo: "deb http://labs.consol.de/repo/stable/{{ ansible_distribution|lower }} {{ ansible_distribution_release }} main"
     state: present
     update_cache: yes
- 
-# - name: Wait for cloud-init
-#   command: /usr/bin/cloud-init status --wait
-   
-# - name: Wait 2 minutes for APT to complete on AWS instances
-#   pause:
-#     minutes: 2

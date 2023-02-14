@@ -6,7 +6,6 @@
 
 - include: setup-Debian-family-prerequisites.yml
   when: ansible_os_family == 'Debian'
-  
 # tasks file for mod gearman worker
 - include: setup-thruk.yml
 

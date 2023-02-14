@@ -24,7 +24,7 @@
 - name: Install  dependencies (RHEL/CentOS).
   package:
     name:
-      - gnupg2 
+      - gnupg2
       - httpd
       - naemon
     state: latest

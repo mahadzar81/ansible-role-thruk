@@ -1,6 +1,5 @@
 ---
 - name: restart apache2
   service: "name=apache2 state=restarted sleep=5"
-  
 - name: restart thruk
   service: "name=thruk state=restarted sleep=5"

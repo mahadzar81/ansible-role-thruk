@@ -1,4 +1,3 @@
-# put defaulf variables here
 ---
 apache_state: started
 apache_enabled: yes

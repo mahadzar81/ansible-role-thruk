@@ -1,2 +1,3 @@
 ---
 with_httpd_conf: /etc/apache2/conf-available
+gnupg_package: gnupg2
