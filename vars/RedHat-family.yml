@@ -1,7 +1,6 @@
 ---
 apache_service: httpd
 apache_user: apache
-apache_service: httpd
 apache_daemon: httpd
 apache_daemon_path: /usr/sbin/
 apache_server_root: /etc/httpd
